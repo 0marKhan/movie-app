@@ -16,7 +16,7 @@ const MovieDetails = () => {
           <div className="absolute w-full h-[600px] bg-gradient-to-t from-black "></div>
           <img
             className="w-full h-full object-cover"
-            src={`https://image.tmdb.org/t/p/w500/${backdrop_path}`}
+            src={`https://image.tmdb.org/t/p/original/${backdrop_path}`}
             alt={original_title}
           />
         </div>
