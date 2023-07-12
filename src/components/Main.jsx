@@ -33,8 +33,6 @@ const Main = () => {
     dispatch(movieActions.setMovieDetails(movieArr));
   };
 
-  console.log("main page launched");
-
   return (
     <div className="w-full h-[480px] text-white">
       <div className="w-full h-full">
