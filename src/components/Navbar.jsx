@@ -13,7 +13,7 @@ const Navbar = () => {
       </Link>
 
       <div>
-        <Link to="/e">
+        <Link to="/movie-page">
           <button className="text-white bg-red-600 px-3 py-2 rounded cursor-pointer">
             Movies
           </button>
