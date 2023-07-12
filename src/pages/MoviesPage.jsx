@@ -48,6 +48,7 @@ const MoviesPage = () => {
   });
 
   const searchMovieHandler = (event) => {
+    event.preventDefault();
     setSearchMovies(event.target.value);
     console.log(searchMovies);
   };
@@ -82,7 +83,7 @@ const MoviesPage = () => {
           </IconButton>
         </Paper>
       </div>
-      <div className="text-white grid grid-cols-3 mx-10 relative top-[12%]">
+      <div className="text-white grid grid-cols-3 mx-6 relative top-[12%]">
         {movies
           .filter((mov) =>
             mov.title.trim().toLowerCase().includes(searchMovies)
