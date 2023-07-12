@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { TextField, createTheme, ThemeProvider } from "@mui/material";
+
 import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
-import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
-import DirectionsIcon from "@mui/icons-material/Directions";
 import requests from "../Requests";
 import axios from "axios";
 import { useDispatch } from "react-redux";
@@ -48,7 +45,7 @@ const MoviesPage = () => {
       setMovies(uniqueMovies);
     };
     fetchMovies();
-  }, []);
+  });
 
   const searchMovieHandler = (event) => {
     setSearchMovies(event.target.value);
@@ -93,7 +90,9 @@ const MoviesPage = () => {
           .map((items) => (
             <div className="my-8 mx-2" key={items.id}>
               <Link to="/details">
+                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                 <a
+                  href="#"
                   onClick={() => {
                     setMovie(items);
                   }}
