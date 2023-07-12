@@ -84,6 +84,7 @@ const MoviesPage = () => {
           .map((items) => (
             <div className="my-8 mx-2" key={items.id}>
               <Link to="/details">
+                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                 <a
                   href="#"
                   onClick={() => {
