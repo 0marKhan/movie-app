@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div className="flex items-center justify-between p-4 z-[100] w-full absolute">
-      <Link to="/movie-app">
+      <Link to="/">
         <h1 className=" text-red-600 text-4xl font-bold cursor-pointer">
           TMOVIES
         </h1>
@@ -18,7 +18,7 @@ const Navbar = () => {
             Movies
           </button>
         </Link>
-        <Link to="/movie-app">
+        <Link to="/">
           <button className="text-white pr-4 ml-4 cursor-pointer ">Home</button>
         </Link>
       </div>
