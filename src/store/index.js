@@ -1,6 +1,7 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import { useDispatch } from "react-redux";
 
 const initialState = {
   backdrop_path: "",
@@ -28,19 +29,20 @@ const movieSlice = createSlice({
   },
 });
 
-const persistConfig = {
-  key: "root",
-  storage,
-};
-
-const persistedReducer = persistReducer(persistConfig, movieSlice.reducer);
+const persistedReducer = persistReducer(
+  {
+    key: "root",
+    storage,
+  },
+  movieSlice.reducer
+);
 
 const store = configureStore({
   reducer: persistedReducer,
 });
 
 export const movieActions = movieSlice.actions;
-
+export const useAppDispatch = () => useDispatch();
 export default store;
 
 export const persistor = persistStore(store);
