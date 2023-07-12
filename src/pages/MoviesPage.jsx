@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
@@ -38,15 +39,21 @@ const MoviesPage = () => {
           index === self.findIndex((m) => m.title === movie.original_title)
       );
 
+      console.log(movies);
+
+      //remove duplicated from the movie array
       setMovies(uniqueMovies);
     };
     fetchMovies();
-  }, []);
+  });
 
   const searchMovieHandler = (event) => {
     event.preventDefault();
-    setSearchMovies(event.target.value.toLowerCase());
+    setSearchMovies(event.target.value);
+    console.log(searchMovies);
   };
+
+  //   console.log(movies);
 
   const setMovie = (movieArr) => {
     dispatch(movieActions.setMovieDetails(movieArr));
@@ -54,7 +61,7 @@ const MoviesPage = () => {
 
   return (
     <div className="h-[1000px]">
-      <div className="flex justify-center relative w-full top-[10%]">
+      <div className=" flex justify-center relative w-full top-[10%]">
         <Paper
           component="form"
           sx={{
@@ -76,7 +83,7 @@ const MoviesPage = () => {
           </IconButton>
         </Paper>
       </div>
-      <div className="text-white grid grid-cols-3 mx-6 w-auto relative top-[12%] justify-center">
+      <div className="text-white grid grid-cols-3 mx-6 relative top-[12%]">
         {movies
           .filter((mov) =>
             mov.title.trim().toLowerCase().includes(searchMovies)
@@ -84,6 +91,7 @@ const MoviesPage = () => {
           .map((items) => (
             <div className="my-8 mx-2" key={items.id}>
               <Link to="/details">
+                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                 <a
                   href="#"
                   onClick={() => {
@@ -91,7 +99,7 @@ const MoviesPage = () => {
                   }}
                 >
                   <img
-                    className="m-auto h-[200px] md:h-[330px] lg:h-[450px] transition-transform duration-300 transform hover:scale-105"
+                    className="h-[200px] md:h-[330px] lg:h-[450px] transition-transform duration-300 transform hover:scale-105"
                     src={`https://image.tmdb.org/t/p/w500/${items.poster_path}`}
                     alt={items.original_title}
                   />
