@@ -7,8 +7,6 @@ import Movie from "./Movie";
 const Row = ({ title, fetchURL, rowID }) => {
   const [movies, setMovies] = useState([]);
 
-  console.log(movies);
-
   useEffect(() => {
     const fetchMovies = async () => {
       const response = await axios.get(fetchURL);

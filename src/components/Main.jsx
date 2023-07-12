@@ -33,10 +33,12 @@ const Main = () => {
     dispatch(movieActions.setMovieDetails(movieArr));
   };
 
+  console.log("main page launched");
+
   return (
-    <div className="w-full h-[390px] text-white">
+    <div className="w-full h-[480px] text-white">
       <div className="w-full h-full">
-        <div className="absolute w-full h-[390px] bg-gradient-to-r from-black"></div>
+        <div className="absolute w-full h-[480px] bg-gradient-to-r from-black"></div>
         <img
           className="w-full h-full object-cover"
           src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
