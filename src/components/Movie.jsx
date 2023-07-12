@@ -1,12 +1,10 @@
-import React, { useState } from "react";
-import { FaHeart, FaRegHeart } from "react-icons/fa";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { FaRegHeart } from "react-icons/fa";
+import { useDispatch } from "react-redux";
 import { movieActions } from "../store";
 import { Link } from "react-router-dom";
 
 const Movie = ({ item }) => {
-  const [like, setLike] = useState(false);
-
   const dispatch = useDispatch();
 
   const setMovie = (movieArr) => {
@@ -22,17 +20,14 @@ const Movie = ({ item }) => {
       />
 
       <Link to="/details">
-        <a onClick={() => setMovie(item)}>
+        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+        <a href="#" onClick={() => setMovie(item)}>
           <div className="absolute top-0 left-0 w-full h-full hover:bg-black/80 opacity-0 hover:opacity-100 text-white">
             <p className="white-space-normal text-xs md:text-sm font-bold flex justify-center items-center h-full text-center">
               {item?.title}
             </p>
             <p>
-              {like ? (
-                <FaHeart className="absolute top-4 left-4 text-gray-300" />
-              ) : (
-                <FaRegHeart className="absolute top-4 left-4 text-gray-300" />
-              )}
+              <FaRegHeart className="absolute top-4 left-4 text-gray-300" />
             </p>
           </div>
         </a>
