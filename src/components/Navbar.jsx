@@ -13,10 +13,13 @@ const Navbar = () => {
       </Link>
 
       <div>
-        <Link to="/movie-app">
-          <button className="text-white pr-4 hover:bg-red-600 px-3 py-2 rounded cursor-pointer ">
-            Home
+        <Link to="/movie-page">
+          <button className="text-white bg-red-600 px-3 py-2 rounded cursor-pointer">
+            Movies
           </button>
+        </Link>
+        <Link to="/movie-app">
+          <button className="text-white pr-4 ml-4 cursor-pointer ">Home</button>
         </Link>
       </div>
     </div>
