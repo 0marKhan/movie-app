@@ -10,7 +10,7 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/movie-app" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/details" element={<MovieDetails />} />
       </Routes>
     </>
