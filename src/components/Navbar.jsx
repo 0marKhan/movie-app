@@ -18,7 +18,7 @@ const Navbar = () => {
             Movies
           </button>
         </Link>
-        <Link to="/">
+        <Link to="/movie-app">
           <button className="text-white pr-4 ml-4 cursor-pointer ">Home</button>
         </Link>
       </div>
